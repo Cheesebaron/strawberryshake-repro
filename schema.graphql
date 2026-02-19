@@ -1,0 +1,30 @@
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+type Query {
+  node(id: ID!): Node
+}
+
+interface Node {
+  id: ID!
+}
+
+type Mutation {
+    cleanupOldMemberships: CleanupOldMembershipsPayload!
+}
+
+type CleanupOldMembershipsPayload {
+  result: CleanupMembershipsResult
+}
+
+type CleanupMembershipsResult {
+  recordsRemoved: UnsignedLong!
+}
+
+type Herp implements Node {
+    id: ID!
+}
+
+scalar UnsignedLong

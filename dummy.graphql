@@ -1,0 +1,7 @@
+mutation DummyMutation {
+    cleanupOldMemberships {
+        result {
+            recordsRemoved
+        }
+    }
+}
