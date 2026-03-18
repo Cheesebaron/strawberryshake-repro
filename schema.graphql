@@ -1,6 +1,5 @@
 schema {
   query: Query
-  mutation: Mutation
 }
 
 type Query {
@@ -11,20 +10,9 @@ interface Node {
   id: ID!
 }
 
-type Mutation {
-    cleanupOldMemberships: CleanupOldMembershipsPayload!
-}
-
-type CleanupOldMembershipsPayload {
-  result: CleanupMembershipsResult
-}
-
-type CleanupMembershipsResult {
-  recordsRemoved: UnsignedLong!
-}
-
 type Herp implements Node {
-    id: ID!
+  id: ID!
+  timeLimit: TimeSpan
 }
 
-scalar UnsignedLong
+scalar TimeSpan

@@ -1,7 +1,7 @@
-mutation DummyMutation {
-    cleanupOldMemberships {
-        result {
-            recordsRemoved
+query MyQuery {
+    node(id: "123") {
+        ... on Herp {
+            timeLimit
         }
     }
 }
